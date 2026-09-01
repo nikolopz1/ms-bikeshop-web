@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - MS BikeShop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/logo.png" alt="MS BikeShop Logo" class="logo">
+                <span class="brand-name">MS BikeShop</span>
+            </div>
+            <a href="index.html" class="btn btn-primary">Volver a la tienda</a>
+        </div>
+    </nav>
+
+    <section class="checkout-section">
+        <div class="container">
+            <h1>Finalizar Compra</h1>
+            
+            <div class="checkout-content">
+                <!-- RESUMEN DE COMPRA -->
+                <div class="checkout-resumen">
+                    <h2>Resumen de tu Compra</h2>
+                    <div id="resumen-items"></div>
+                    <div class="resumen-total">
+                        <h3>Total: $<span id="resumen-total">0</span></h3>
+                    </div>
+                </div>
+
+                <!-- FORMULARIO DE CHECKOUT -->
+                <div class="checkout-form">
+                    <h2>Información de Entrega</h2>
+                    <form id="form-checkout">
+                        <!-- INFORMACIÓN PERSONAL -->
+                        <fieldset>
+                            <legend>Datos Personales</legend>
+                            <div class="form-group">
+                                <label>Nombre Completo *</label>
+                                <input type="text" name="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email *</label>
+                                <input type="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Teléfono / WhatsApp *</label>
+                                <input type="tel" name="telefono" required>
+                            </div>
+                        </fieldset>
+
+                        <!-- INFORMACIÓN DE ENTREGA -->
+                        <fieldset>
+                            <legend>Dirección de Entrega</legend>
+                            <div class="form-group">
+                                <label>Dirección Completa *</label>
+                                <input type="text" name="direccion" placeholder="Calle, número, apto" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Ciudad *</label>
+                                <input type="text" name="ciudad" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Departamento *</label>
+                                <input type="text" name="departamento" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Código Postal</label>
+                                <input type="text" name="codigo_postal">
+                            </div>
+                            <div class="form-group">
+                                <label>Instrucciones de Entrega</label>
+                                <textarea name="instrucciones" rows="3" placeholder="Ej: Dejar en recepción, timbre a la izquierda..."></textarea>
+                            </div>
+                        </fieldset>
+
+                        <!-- MÉTODO DE PAGO -->
+                        <fieldset>
+                            <legend>Método de Pago</legend>
+                            <div class="metodos-pago">
+                                <label class="opcion-pago">
+                                    <input type="radio" name="metodo_pago" value="transferencia" required>
+                                    <span>Transferencia Bancaria</span>
+                                </label>
+                                <label class="opcion-pago">
+                                    <input type="radio" name="metodo_pago" value="nequi" required>
+                                    <span>Nequi</span>
+                                </label>
+                                <label class="opcion-pago">
+                                    <input type="radio" name="metodo_pago" value="daviplata" required>
+                                    <span>Daviplata</span>
+                                </label>
+                                <label class="opcion-pago">
+                                    <input type="radio" name="metodo_pago" value="efectivo" required>
+                                    <span>Efectivo Contra Entrega</span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <div class="terminos">
+                            <label>
+                                <input type="checkbox" name="terminos" required>
+                                Acepto los términos y condiciones
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-grande">Confirmar Pedido</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 MS BikeShop. Wellness in Motion. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="checkout.js"></script>
+</body>
+</html>
